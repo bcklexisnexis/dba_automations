@@ -26,19 +26,8 @@ jobs:
           python-version: 3.9
           miniforge-version: latest
 
-     # - name: Install ipython kernel
-     #   run: |
-     #     ipython kernel install --name "umnds-pydata" --user
-     
-     # - name: check notebook state and make sure outputs and execution_count is removed
-     #   uses: ResearchSoftwareActions/EnsureCleanNotebooksAction@1.1
-
-     # - name: Validate runnability
-     #   run: |
-     #   jupyter nbconvert --execute *.ipynb --to html
-
-     # - name: Valudate unit test
-     #   shell: bash -l {0}
-     #   run: |
-     #     conda activate jupyter-actions
+      - name: Valudate code 
+        shell: bash -l {0}
+        run: |
+          python3 testing_dns.py 
      #     pytest
